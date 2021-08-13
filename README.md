@@ -1,10 +1,9 @@
-# Getting Started with Create React App
+# Built an app like Trello with Reactjs + Hooks + Redux.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## References:
 
-In the project directory, you can run:
+This project is referenced by me from Trungquandev Official (https://www.youtube.com/watch?v=A0Mq2WZVm_w&list=PLP6tw4Zpj-RKdGMqhYpfdl94cd4fu-RFg).
 
 ### `yarn start`
 
