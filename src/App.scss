@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:wght@400:600");
+
+$nav1-bg-color: #026aa7;
+$board-bg-color: #0079bf;
+$column-bg-color: #ebecf0;
+$col-border-radius: 4px;
+$card-border-radius: 4px;
+$col-header-height: 42px;
+$col-footer-height: 42px;
+
+$d-10: 10px;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  line-height: 1.3em;
+}
+
+.trello {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 40px 50px 1fr;
+  background-color: $board-bg-color;
+
+  .navbar {
+    padding-left: $d-10;
+    display: flex;
+    align-items: center;
+
+    &.app {
+      background-color: $nav1-bg-color;
+      font-size: 1.5rem;
+    }
+
+    &.board {
+      background-color: $board-bg-color;
+      font-size: 1.1rem;
+    }
+  }
+
+  .board-columns {
+    display: flex;
+    margin: 0 $d-10 $d-10;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+    &::-webkit-scrollbar:horizontal {
+      height: 11px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba($color: #fff, $alpha: 0.24);
+      border-radius: 8px;
+    }
+
+    .column {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 98%;
+      &:not(:first-child) {
+        margin-left: $d-10;
+      }
+
+      > * {
+        background-color: $column-bg-color;
+        color: #333;
+        padding: 0 8px;
+      }
+
+      header {
+        padding-left: 15px;
+        height: $col-header-height;
+        line-height: $col-header-height;
+        font-size: 16px;
+        font-weight: bold;
+        border-top-left-radius: $col-border-radius;
+        border-top-right-radius: $col-border-radius;
+      }
+
+      footer {
+        padding-left: 15px;
+        height: $col-header-height;
+        line-height: $col-header-height;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom-left-radius: $col-border-radius;
+        border-bottom-right-radius: $col-border-radius;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        max-height: calc(100% - #{$col-header-height} - #{$col-footer-height});
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          -webkit-appearance: none;
+        }
+        &::-webkit-scrollbar:vertical {
+          width: 11px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: darken($color: $column-bg-color, $amount: 15);
+          border-right: 1px solid $column-bg-color;
+          border-radius: 5px;
+        }
+
+        li {
+          background-color: #fff;
+          padding: $d-10;
+          border-radius: $card-border-radius;
+          box-shadow: 0 1px 1px rgba($color: #000000, $alpha: 0.1);
+          // ko apply lên pt cuối cùng
+          &:not(:last-child) {
+            margin-bottom: $d-10;
+          }
+          img {
+            display: block;
+            width: calc(100% + 2 * #{$d-10});
+            margin: (-$d-10) 0 $d-10 (-$d-10);
+            border-top-left-radius: $card-border-radius;
+            border-top-right-radius: $card-border-radius;
+          }
+        }
+      }
+    }
+  }
+}
