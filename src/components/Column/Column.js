@@ -1,17 +1,16 @@
 import React from 'react';
 import './Column.scss';
-import Task from 'components/Task/Task';
+import Card from 'components/Card/Card';
+import { mapOrder } from 'utilities/sorts';
 
-function Column() {
+function Column(props) {
+    const { column } = props;
+    const cards = mapOrder(column.cards, column.cardOrder, 'id');
     return (
         <div className="column">
-            <header>I can do it</header>
-            <ul className="task-list">
-                <Task />
-                <li className="task-item">Tomorrow will better than today because you can do that</li>
-                <li className="task-item">Tomorrow will better than today because you can do that</li>
-                <li className="task-item">Tomorrow will better than today because you can do that</li>
-                <li className="task-item">Tomorrow will better than today because you can do that</li>
+            <header>{column.title}</header>
+            <ul className="card-list">
+                {cards.map((card, index) => <Card key={index} card={card} />)}
             </ul>
             <footer>Add anoter card</footer>
         </div>
