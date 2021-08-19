@@ -1,0 +1,58 @@
+@import "_setting.scss";
+
+$col-border-radius: 4px;
+$col-header-height: 42px;
+$col-footer-height: 42px;
+
+.column {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 98%;
+    &:not(:first-child) {
+        margin-left: $d-10;
+    }
+
+    > * {
+        background-color: $column-bg-color;
+        color: #333;
+        padding: 0 8px;
+    }
+
+    header {
+        padding-left: 15px;
+        height: $col-header-height;
+        line-height: $col-header-height;
+        font-size: 16px;
+        font-weight: bold;
+        border-top-left-radius: $col-border-radius;
+        border-top-right-radius: $col-border-radius;
+    }
+
+    ul.task-list {
+        list-style-type: none;
+        margin: 0;
+        max-height: calc(100% - #{$col-header-height} - #{$col-footer-height});
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            -webkit-appearance: none;
+        }
+        &::-webkit-scrollbar:vertical {
+            width: 11px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: darken($color: $column-bg-color, $amount: 15);
+            border-right: 1px solid $column-bg-color;
+            border-radius: 5px;
+        }
+    }
+
+    footer {
+        padding-left: 15px;
+        height: $col-header-height;
+        line-height: $col-header-height;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom-left-radius: $col-border-radius;
+        border-bottom-right-radius: $col-border-radius;
+    }
+}
