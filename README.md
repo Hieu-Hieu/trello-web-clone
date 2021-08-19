@@ -1,7 +1,7 @@
-# Build an app like Trello with Reactjs + Hooks + Redux.
+# `Build an app like Trello with Reactjs + Hooks + Redux.`
 
 
-## References:
+## `References:`
 
 This project is referenced by me from Trungquandev Official (https://www.youtube.com/watch?v=A0Mq2WZVm_w&list=PLP6tw4Zpj-RKdGMqhYpfdl94cd4fu-RFg).
 
