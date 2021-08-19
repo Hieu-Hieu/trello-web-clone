@@ -1,0 +1,21 @@
+@import "_setting.scss";
+
+$card-border-radius: 4px;
+
+li.task-item {
+    background-color: #fff;
+    padding: $d-10;
+    border-radius: $card-border-radius;
+    box-shadow: 0 1px 1px rgba($color: #000000, $alpha: 0.1);
+    // ko apply lên pt cuối cùng
+    &:not(:last-child) {
+        margin-bottom: $d-10;
+    }
+    img {
+        display: block;
+        width: calc(100% + 2 * #{$d-10});
+        margin: (-$d-10) 0 $d-10 (-$d-10);
+        border-top-left-radius: $card-border-radius;
+        border-top-right-radius: $card-border-radius;
+    }
+}
