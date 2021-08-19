@@ -1,4 +1,4 @@
-# Built an app like Trello with Reactjs + Hooks + Redux.
+# Build an app like Trello with Reactjs + Hooks + Redux.
 
 
 ## References:
